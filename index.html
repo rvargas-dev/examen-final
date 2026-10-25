@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Organiza tus actividades académicas con StudyTask.">
+    <title>StudyTask | Actividades académicas</title>
+  </head>
+  <body>
+    <header>
+      <h1>StudyTask</h1>
+      <p>Organiza tus actividades académicas en un solo lugar.</p>
+    </header>
+
+    <main>
+      <section aria-labelledby="nueva-tarea">
+        <h2 id="nueva-tarea">Registrar una actividad</h2>
+
+        <form id="formulario-tarea" action="#" method="post">
+          <div>
+            <label for="nombre">Nombre de la tarea</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              autocomplete="off"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="curso">Curso</label>
+            <input
+              type="text"
+              id="curso"
+              name="curso"
+              autocomplete="off"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="fecha-limite">Fecha límite</label>
+            <input
+              type="date"
+              id="fecha-limite"
+              name="fecha-limite"
+              required
+            >
+          </div>
+
+          <div>
+            <label for="prioridad">Prioridad</label>
+            <select id="prioridad" name="prioridad" required>
+              <option value="" selected disabled>Selecciona una prioridad</option>
+              <option value="baja">Baja</option>
+              <option value="media">Media</option>
+              <option value="alta">Alta</option>
+            </select>
+          </div>
+
+          <button type="submit">Añadir actividad</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="lista-tareas">
+        <h2 id="lista-tareas">Mis actividades</h2>
+        <p id="mensaje-estado" role="status" aria-live="polite"></p>
+        <ul id="tareas"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; StudyTask</p>
+    </footer>
+
+    <script src="task-storage.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
