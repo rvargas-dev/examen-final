@@ -8,7 +8,19 @@ let tareas = [];
 function mostrarTarea(tarea) {
   const elemento = document.createElement("li");
   elemento.dataset.tareaId = tarea.id;
-  elemento.textContent = `${tarea.titulo} — ${tarea.curso} — ${tarea.fecha} — Prioridad: ${tarea.prioridad}`;
+  elemento.className = `priority-${tarea.prioridad}`;
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = tarea.titulo;
+
+  const detalles = document.createElement("p");
+  detalles.textContent = `${tarea.curso} · Fecha límite: ${tarea.fecha}`;
+
+  const prioridad = document.createElement("span");
+  prioridad.className = "task-priority";
+  prioridad.textContent = `Prioridad ${tarea.prioridad}`;
+
+  elemento.append(titulo, detalles, prioridad);
   listaTareas.append(elemento);
 }
 
